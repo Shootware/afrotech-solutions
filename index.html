@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Afrotech Solutions - Partenaire informatique au Cameroun spécialisé en développement logiciel, cloud et transformation digitale">
+  <meta name="keywords" content="informatique, Cameroun, développement, cloud, digital, IT, Yaoundé, Douala">
+  <meta name="author" content="Afrotech Solutions">
+  <meta property="og:title" content="Afrotech Solutions - Votre partenaire informatique au Cameroun">
+  <meta property="og:description" content="Innovation, qualité et expertise pour vos projets numériques">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.afrotechsolutions.cm">
+  <meta property="og:image" content="https://www.afrotechsolutions.cm/images/social-share.jpg">
+  <title>Afrotech Solutions - Votre partenaire informatique au Cameroun</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preload" href="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1280&q=80" as="image">
+  <script type="module" src="/js/main.js" defer></script>
+  <style>
+    /* CSS Variables for Theme and Dark Mode */
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #f59e0b;
+      --secondary-dark: #d97706;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --header-bg: #ffffff;
+      --footer-bg: #1e293b;
+      --footer-text: #94a3b8;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --radius: 0.5rem;
+      --section-padding: 5rem;
+      --max-width: 1200px;
+    }
+
+    /* Dark Mode Variables */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #e2e8f0;
+        --text-light: #94a3b8;
+        --bg: #0f172a;
+        --card-bg: #1e293b;
+        --header-bg: #1e293b;
+      }
+    }
+
+    [data-theme="dark"] {
+      --text: #e2e8f0;
+      --text-light: #94a3b8;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --header-bg: #1e293b;
+    }
+
+    [data-theme="light"] {
+      --text: #1e293b;
+      --text-light: #64748b;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --header-bg: #ffffff;
+    }
+
+    /* Base Styles - Mobile First */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+    }
+
+    /* Typography */
+    h1, h2, h3, h4 {
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+    }
+
+    h3 {
+      font-size: clamp(1.5rem, 3vw, 1.75rem);
+    }
+
+    p {
+      font-size: clamp(1rem, 2vw, 1.125rem);
+    }
+
+    /* Links & Buttons */
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--primary-dark);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--secondary);
+      color: var(--text);
+      box-shadow: 0 4px 6px rgba(245, 158, 11, 0.5);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--secondary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(245, 158, 11, 0.6);
+    }
+
+    /* Layout Components */
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: var(--section-padding) 0;
+      position: relative;
+    }
+
+    /* Header - BEM Methodology */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: var(--header-bg);
+      box-shadow: var(--shadow);
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .header--scrolled {
+      background-color: var(--primary);
+      box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
+    }
+
+    .header__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+    }
+
+    .header__logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .header--scrolled .header__logo {
+      color: white;
+    }
+
+    /* Navigation - BEM */
+    .nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav__list {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav__link {
+      font-weight: 600;
+      color: var(--text);
+      padding: 0.5rem;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+
+    .nav__link:hover,
+    .nav__link--active {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .header--scrolled .nav__link {
+      color: white;
+    }
+
+    .header--scrolled .nav__link:hover,
+    .header--scrolled .nav__link--active {
+      background-color: white;
+      color: var(--primary);
+    }
+
+    /* Mobile Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 0.375rem;
+      cursor: pointer;
+      width: 1.75rem;
+      height: 1.375rem;
+      justify-content: center;
+      z-index: 1001;
+    }
+
+    .hamburger__line {
+      width: 100%;
+      height: 0.1875rem;
+      background-color: var(--primary);
+      border-radius: 0.125rem;
+      transition: var(--transition);
+    }
+
+    .header--scrolled .hamburger__line {
+      background-color: white;
+    }
+
+    .hamburger--active .hamburger__line:nth-child(1) {
+      transform: translateY(0.4375rem) rotate(45deg);
+    }
+
+    .hamburger--active .hamburger__line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger--active .hamburger__line:nth-child(3) {
+      transform: translateY(-0.4375rem) rotate(-45deg);
+    }
+
+    /* Hero Section - Utility First Classes */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(109, 40, 217, 0.9)), 
+                  url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1280&q=80') center/cover no-repeat;
+      color: white;
+      position: relative;
+      padding: 0 1.5rem;
+      margin-top: -4.5rem;
+      padding-top: 6rem;
+    }
+
+    .hero__content {
+      max-width: 48rem;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero__title {
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero__subtitle {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* About Section */
+    .about {
+      background-color: var(--bg);
+    }
+
+    .about__container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .about__content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .about__image {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      transition: var(--transition);
+    }
+
+    .about__image:hover {
+      transform: scale(1.02);
+    }
+
+    .about__image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: var(--transition);
+    }
+
+    /* Services Section - CSS Grid */
+    .services {
+      background-color: var(--card-bg);
+    }
+
+    .services__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background-color: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .service-card:hover {
+      transform: translateY(-0.5rem);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .service-card__icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+
+    .service-card__title {
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    /* Projects Section - CSS Grid with Container Queries */
+    .projects__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .project-card {
+      background-color: var(--card-bg);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-0.5rem);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .project-card__image {
+      width: 100%;
+      height: 12rem;
+      object-fit: cover;
+      border-bottom: 3px solid var(--primary);
+    }
+
+    .project-card__content {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card__title {
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    /* Testimonials - Glassmorphism Effect */
+    .testimonials {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(109, 40, 217, 0.1));
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      padding: 3rem 2rem;
+      margin: 3rem auto;
+      max-width: 60rem;
+    }
+
+    .testimonial {
+      font-style: italic;
+      position: relative;
+      padding: 0 2rem;
+    }
+
+    .testimonial::before {
+      content: "“";
+      font-size: 5rem;
+      position: absolute;
+      left: -1rem;
+      top: -2rem;
+      opacity: 0.1;
+      color: var(--primary);
+    }
+
+    /* Contact Form */
+    .contact__form {
+      max-width: 36rem;
+      margin: 0 auto;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .form__group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form__label {
+      font-weight: 600;
+    }
+
+    .form__control {
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--text-light);
+      background-color: var(--card-bg);
+      color: var(--text);
+      transition: var(--transition);
+    }
+
+    .form__control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 3rem 0;
+      margin-top: auto;
+    }
+
+    .footer__container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+      gap: 2rem;
+    }
+
+    .footer__logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    .footer__links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer__link {
+      color: var(--footer-text);
+      transition: var(--transition);
+    }
+
+    .footer__link:hover {
+      color: white;
+    }
+
+    .footer__social {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .footer__social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      transition: var(--transition);
+    }
+
+    .footer__social-link:hover {
+      background-color: var(--primary);
+      transform: translateY(-0.25rem);
+    }
+
+    .footer__copyright {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Theme Switcher */
+    .theme-switcher {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 1000;
+      background-color: var(--card-bg);
+      border-radius: 50%;
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-lg);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .theme-switcher:hover {
+      transform: scale(1.1);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(1rem); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate {
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+
+    /* Micro-interactions */
+    .hover-scale {
+      transition: var(--transition);
+    }
+
+    .hover-scale:hover {
+      transform: scale(1.05);
+    }
+
+    /* Responsive Design - Container Queries */
+    @container (min-width: 576px) {
+      .about__container {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+      }
+    }
+
+    /* Media Queries for Larger Screens */
+    @media (min-width: 768px) {
+      :root {
+        --section-padding: 6rem;
+      }
+
+      .hero {
+        padding-top: 7rem;
+      }
+
+      .hero__content {
+        text-align: left;
+      }
+
+      .hero__buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 75%;
+        height: 100vh;
+        background-color: var(--primary);
+        flex-direction: column;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: var(--transition);
+        z-index: 1000;
+      }
+
+      .nav--active {
+        transform: translateX(0);
+      }
+
+      .nav__list {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .nav__link {
+        color: white !important;
+        font-size: 1.25rem;
+      }
+
+      .nav__link:hover,
+      .nav__link--active {
+        background-color: white !important;
+        color: var(--primary) !important;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      .header,
+      .footer,
+      .theme-switcher {
+        display: none;
+      }
+
+      body {
+        background-color: white;
+        color: black;
+      }
+
+      section {
+        padding: 1rem 0;
+        page-break-inside: avoid;
+      }
+
+      .hero {
+        min-height: auto;
+        margin-top: 0;
+        background: none;
+        color: black;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Navigation -->
+  <header class="header" role="banner">
+    <div class="header__container container">
+      <a href="/" class="header__logo">Afrotech Solutions</a>
+      
+      <nav class="nav" role="navigation">
+        <ul class="nav__list">
+          <li><a href="#home" class="nav__link nav__link--active">Accueil</a></li>
+          <li><a href="#about" class="nav__link">À propos</a></li>
+          <li><a href="#services" class="nav__link">Services</a></li>
+          <li><a href="#projects" class="nav__link">Projets</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="hamburger" aria-label="Menu mobile" aria-expanded="false">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero" role="region" aria-labelledby="hero-heading">
+    <div class="hero__content animate">
+      <h1 id="hero-heading" class="hero__title">Votre partenaire informatique au Cameroun</h1>
+      <p class="hero__subtitle">Innovation, qualité et expertise pour vos projets numériques</p>
+      <div class="hero__buttons">
+        <a href="#contact" class="btn btn-primary">Contactez-nous</a>
+        <a href="#services" class="btn" style="background: rgba(255,255,255,0.2); color: white; backdrop-filter: blur(10px);">Nos services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about" role="region" aria-labelledby="about-heading">
+    <div class="container">
+      <h2 id="about-heading" class="animate">À propos de nous</h2>
+      <p class="animate delay-1" style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Nous transformons vos idées en solutions numériques performantes</p>
+      
+      <div class="about__container">
+        <div class="about__content animate delay-1">
+          <p>Afrotech Solutions est une société camerounaise spécialisée dans les technologies de l'information. Nous accompagnons les entreprises dans leur transformation digitale à travers des solutions innovantes et personnalisées.</p>
+          <p>Forts d'une équipe passionnée et expérimentée, nous proposons une expertise couvrant plusieurs domaines tels que le développement logiciel, les infrastructures cloud, le conseil IT, et bien plus encore.</p>
+          <div class="about__stats animate delay-2" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem;">
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; font-weight: 700; color: var(--primary);">50+</div>
+              <div>Clients satisfaits</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; font-weight: 700; color: var(--primary);">100+</div>
+              <div>Projets réalisés</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; font-weight: 700; color: var(--primary);">10+</div>
+              <div>Experts IT</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about__image hover-scale animate delay-2">
+          <img 
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" 
+            alt="Notre équipe travaillant sur un projet" 
+            width="600"
+            height="400"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services" role="region" aria-labelledby="services-heading">
+    <div class="container">
+      <h2 id="services-heading" class="animate">Nos services</h2>
+      <p class="animate delay-1" style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Des solutions sur mesure pour répondre à tous vos besoins technologiques</p>
+      
+      <div class="services__grid">
+        <article class="service-card animate delay-1" role="article">
+          <div class="service-card__icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3 class="service-card__title">Développement logiciel</h3>
+          <p>Applications mobiles et web sur mesure adaptées à vos processus métiers.</p>
+        </article>
+        
+        <article class="service-card animate delay-2" role="article">
+          <div class="service-card__icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h3 class="service-card__title">IA & Machine Learning</h3>
+          <p>Solutions intelligentes pour automatiser et optimiser vos opérations.</p>
+        </article>
+        
+        <article class="service-card animate delay-3" role="article">
+          <div class="service-card__icon">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <h3 class="service-card__title">Solutions Cloud</h3>
+          <p>Infrastructure sécurisée et évolutive accessible partout.</p>
+        </article>
+        
+        <article class="service-card animate delay-4" role="article">
+          <div class="service-card__icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3 class="service-card__title">Cybersécurité</h3>
+          <p>Protection de vos données et systèmes contre les menaces.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects" role="region" aria-labelledby="projects-heading">
+    <div class="container">
+      <h2 id="projects-heading" class="animate">Nos réalisations</h2>
+      <p class="animate delay-1" style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Découvrez quelques-uns de nos projets phares</p>
+      
+      <div class="projects__grid">
+        <article class="project-card hover-scale animate delay-1" role="article">
+          <img 
+            class="project-card__image" 
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" 
+            alt="Application de gestion des commandes"
+            width="600"
+            height="300"
+          >
+          <div class="project-card__content">
+            <h3 class="project-card__title">Gestion des commandes</h3>
+            <p>Solution mobile pour la gestion des ventes et stocks avec analyse en temps réel.</p>
+            <a href="#" class="btn" style="margin-top: auto; align-self: flex-start; padding: 0.5rem 0; color: var(--primary);">Voir plus →</a>
+          </div>
+        </article>
+        
+        <article class="project-card hover-scale animate delay-2" role="article">
+          <img 
+            class="project-card__image" 
+            src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=600&q=80" 
+            alt="Plateforme e-commerce"
+            width="600"
+            height="300"
+          >
+          <div class="project-card__content">
+            <h3 class="project-card__title">Boutique en ligne</h3>
+            <p>Plateforme e-commerce sécurisée avec paiement mobile intégré.</p>
+            <a href="#" class="btn" style="margin-top: auto; align-self: flex-start; padding: 0.5rem 0; color: var(--primary);">Voir plus →</a>
+          </div>
+        </article>
+        
+        <article class="project-card hover-scale animate delay-3" role="article">
+          <img 
+            class="project-card__image" 
+            src="./cloudcomputing.jpg" 
+            alt="Infrastructure cloud"
+            width="600"
+            height="300"
+          >
+          <div class="project-card__content">
+            <h3 class="project-card__title">Migration cloud</h3>
+            <p>Optimisation et sécurisation des environnements cloud pour une entreprise locale.</p>
+            <a href="#" class="btn" style="margin-top: auto; align-self: flex-start; padding: 0.5rem 0; color: var(--primary);">Voir plus →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials animate" role="region" aria-labelledby="testimonials-heading">
+    <div class="container">
+      <h2 id="testimonials-heading">Ils nous font confiance</h2>
+      
+      <div class="testimonial">
+        <p>"Afrotech Solutions a transformé notre infrastructure IT en nous offrant un service exceptionnel. Leur équipe est compétente, réactive et à l'écoute de nos besoins spécifiques."</p>
+        <p style="font-weight: 700; margin-top: 1rem;">— Jean M., Directeur IT</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact" role="region" aria-labelledby="contact-heading">
+    <div class="container">
+      <h2 id="contact-heading" class="animate">Contactez-nous</h2>
+      <p class="animate delay-1" style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Prêt à démarrer votre projet? Envoyez-nous un message et nous vous répondrons dans les plus brefs délais.</p>
+      
+      <form class="contact__form animate delay-2" id="contactForm">
+        <div class="form__group">
+          <label for="name" class="form__label">Nom complet</label>
+          <input type="text" id="name" name="name" class="form__control" required>
+        </div>
+        
+        <div class="form__group">
+          <label for="email" class="form__label">Adresse email</label>
+          <input type="email" id="email" name="email" class="form__control" required>
+        </div>
+        
+        <div class="form__group">
+          <label for="service" class="form__label">Service intéressé</label>
+          <select id="service" name="service" class="form__control">
+            <option value="">Sélectionnez un service</option>
+            <option value="development">Développement logiciel</option>
+            <option value="cloud">Solutions Cloud</option>
+            <option value="consulting">Consulting IT</option>
+            <option value="other">Autre</option>
+          </select>
+        </div>
+        
+        <div class="form__group">
+          <label for="message" class="form__label">Message</label>
+          <textarea id="message" name="message" rows="5" class="form__control" required></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Envoyer le message</button>
+        
+        <div id="formMessage" style="margin-top: 1rem; display: none;"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__container">
+        <div class="footer__col">
+          <div class="footer__logo">Afrotech Solutions</div>
+          <p>Votre partenaire technologique au Cameroun pour des solutions innovantes et performantes.</p>
+        </div>
+        
+        <div class="footer__col">
+          <h3 style="color: white; margin-bottom: 1rem;">Liens rapides</h3>
+          <nav class="footer__links">
+            <a href="#home" class="footer__link">Accueil</a>
+            <a href="#about" class="footer__link">À propos</a>
+            <a href="#services" class="footer__link">Services</a>
+            <a href="#projects" class="footer__link">Projets</a>
+            <a href="#contact" class="footer__link">Contact</a>
+          </nav>
+        </div>
+        
+        <div class="footer__col">
+          <h3 style="color: white; margin-bottom: 1rem;">Contact</h3>
+          <address style="font-style: normal;">
+            <p>Bertoua, Cameroun</p>
+            <p>Email: abadegabie@gmail.com</p>
+            <p>Tél: +237 691470511</p>
+          </address>
+        </div>
+        
+        <div class="footer__col">
+          <h3 style="color: white; margin-bottom: 1rem;">Suivez-nous</h3>
+          <div class="footer__social">
+            <a href="https://web.facebook.com/MrFrancoi/" class="footer__social-link" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer__copyright">
+        <p>&copy; 2024 Afrotech Solutions. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Theme Switcher -->
+  <button class="theme-switcher" id="themeSwitcher" aria-label="Changer de thème">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- JavaScript Module -->
+  <script type="module">
+    // Mobile Menu Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('.nav');
+    
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('hamburger--active');
+      nav.classList.toggle('nav--active');
+      
+      // Update aria-expanded attribute
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !expanded);
+    });
+    
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav__link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (nav.classList.contains('nav--active')) {
+          hamburger.classList.remove('hamburger--active');
+          nav.classList.remove('nav--active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+    
+    // Header scroll effect
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('header--scrolled');
+      } else {
+        header.classList.remove('header--scrolled');
+      }
+    });
+    
+    // Theme Switcher
+    const themeSwitcher = document.getElementById('themeSwitcher');
+    const themeIcon = themeSwitcher.querySelector('i');
+    
+    // Check for saved theme preference or use system preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+    
+    themeSwitcher.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      
+      if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+      }
+    });
+    
+    // Intersection Observer for animations
+    const animateElements = document.querySelectorAll('.animate');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    animateElements.forEach(el => {
+      el.style.opacity = 0;
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+    
+    // Form submission
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+    
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(contactForm);
+      const data = Object.fromEntries(formData);
+      
+      try {
+        // In a real app, you would send this to your server
+        // const response = await fetch('/api/contact', {
+        //   method: 'POST',
+        //   headers: { 'Content-Type': 'application/json' },
+        //   body: JSON.stringify(data)
+        // });
+        
+        // Simulate API call
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        formMessage.textContent = 'Merci pour votre message! Nous vous contacterons bientôt.';
+        formMessage.style.color = 'green';
+        formMessage.style.display = 'block';
+        contactForm.reset();
+        
+        setTimeout(() => {
+          formMessage.style.display = 'none';
+        }, 5000);
+      } catch (error) {
+        formMessage.textContent = 'Une erreur est survenue. Veuillez réessayer plus tard.';
+        formMessage.style.color = 'red';
+        formMessage.style.display = 'block';
+      }
+    });
+    
+    // Lazy loading for images
+    if ('loading' in HTMLImageElement.prototype) {
+      // Native lazy loading is supported
+      const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+      lazyImages.forEach(img => {
+        img.src = img.dataset.src;
+      });
+    } else {
+      // Fallback for browsers without native lazy loading
+      const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+      
+      const lazyImageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            lazyImageObserver.unobserve(img);
+          }
+        });
+      });
+      
+      lazyImages.forEach(img => {
+        lazyImageObserver.observe(img);
+      });
+    }
+  </script>
+</body>
+</html>
